@@ -8,8 +8,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int quantity = 2; String order_summary_email_subject;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    
+    public void increment(View view) {
+        if (quantity == 100) {
+            return;
+        }
+        quantity = quantity + 1;
+        displayQuantity(quantity);
     }
 
     /**
