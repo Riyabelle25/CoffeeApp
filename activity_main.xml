@@ -69,6 +69,14 @@
         android:layout_marginTop="16dp"
 
         android:text="Order" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank You!"
+        android:paddingTop="32dp"
+        />
+
 
     
 
