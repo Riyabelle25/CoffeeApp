@@ -1,8 +1,10 @@
-package com.example.pracapp;
-import android.os.Bundle;
+package com.example.courtcounter;
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,38 +12,56 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /**
-     * Display methods that allow the text to appear on the screen. Don't worry if you don't know
-     * how these work yet. We'll be covering them in lesson 3.
+     * Increase the score for Team A by 1 point.
      */
-
-    public void display(String text) {
-        TextView t = (TextView) findViewById(R.id.display_text_view);
-        t.setText(text);
+    public void addOneForTeamA(View v) {
+        displayForTeamA(1);
     }
 
-    public void display(int text) {
-        TextView t = (TextView) findViewById(R.id.display_text_view);
-        t.setText(text + "");
+    /**
+     * Increase the score for Team A by 2 points.
+     */
+    public void addTwoForTeamA(View v) {
+        displayForTeamA(2);
     }
 
-    public void display1(String text) {
-        display(text);
+    /**
+     * Increase the score for Team A by 3 points.
+     */
+    public void addThreeForTeamA(View v) {
+        displayForTeamA(3);
     }
 
-    public void display2(String text) {
-        TextView t = (TextView) findViewById(R.id.display_text_view_2);
-        t.setText(text);
-    }
-
-    public void display3(String text) {
-        TextView t = (TextView) findViewById(R.id.display_text_view_3);
-        t.setText(text);
+    /**
+     * Displays the given score for Team A.
+     */
+    public void displayForTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(score));
     }
 }
 
 
-}
+
+
+
+
+
+
