@@ -20,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
+    
+    public void decrement(View view) {
+        if (quantity == 0) {
+            return;
+        }
+        quantity = quantity - 1;
+        displayQuantity(quantity);
+    }
+
 
     /**
 
