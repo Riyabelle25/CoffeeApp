@@ -17,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
      This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(1);
+       {
+        // Get user's name
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        Editable nameEditable = nameField.getText();
+        String name = nameEditable.toString();
     }
     /**
 
