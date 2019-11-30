@@ -118,16 +118,17 @@ import java.text.NumberFormat;
          * @param addChocolate    is whether or not to add chocolate to the coffee
          * @return text summary
          */
-        private String createOrderSummary(String name, int price, boolean addWhippedCream,
-                                          boolean addChocolate) {
-            String priceMessage = getString(R.string.order_summary_name,name);
-            priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
-            priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
-            priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
-            priceMessage += "\n" + getString(R.string.order_summary_price,NumberFormat.getCurrencyInstance().format(price));
-            priceMessage += "\n" + getString(R.string.thank_you);
-            return priceMessage;
-        }
+       private String createOrderSummary(price,quantity,addWhippedCream,addChocolate) {
+        String priceMessage = "Name: Lilly ";
+        priceMessage += "\nAdd Whipped Cream?" + addWhippedCream;
+        priceMessage += "\nAddchoclate? " + addChocolate;
+        priceMessage += "\nquantity" + quantity;
+        priceMessage += "\nTotal: $"+ price;
+                //NumberFormat.getCurrencyInstance().format(price));
+        priceMessage += "\nthank_you";
+        return priceMessage;
+    }
+
 
         /**
          * This method displays the given quantity value on the screen.
