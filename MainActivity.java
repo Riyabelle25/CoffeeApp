@@ -70,15 +70,7 @@ import java.text.NumberFormat;
 
             // Use an intent to launch an email app.
             // Send the order summary in the email body.
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-            intent.putExtra(Intent.EXTRA_SUBJECT,
-                    getString(R.string.order_summary_email_subject, name));
-            intent.putExtra(Intent.EXTRA_TEXT, message);
-
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
+            
 
 
 
